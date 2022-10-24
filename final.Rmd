@@ -1,0 +1,80 @@
+---
+title: "Week9"
+author: "Zhanxu Liu"
+date: "9/16/2022"
+output: html_document
+---
+## 1. Introduction
+
+Descriptions of dataset:
+
+The current US Census Bureau world population estimate in June 2019 shows that the current global population is 7,577,130,400 people on earth, which far exceeds the world population of 7.2 billion in 2015. Our own estimate based on UN data shows the world's population surpassing 7.7 billion.
+
+Rank: Rank by Population
+
+CCA3: 3 Digit Country Code
+
+Country: Name of the Country
+
+Capital: Name of the Capital
+
+Continent - Name of the Continent where the Country Belongs.
+
+2022 population - The Population of the Country in year 2022.
+
+2020 population - The Population of the Country in year 2020.
+
+2015 population - The Population of the Country in year 2015.
+
+2010 population - The Population of the Country in year 2010.
+
+2000 population - The Population of the Country in year 2000.
+
+1990 population - The Population of the Country in year 1990.
+
+1980 population - The Population of the Country in year 1980.
+
+1970 population - The Population of the Country in year 1970.
+
+Area (km²): Area size of the Country in square kilometer
+
+Density (per km²): Population Density per square kilometer
+
+Growth Rate: Population Growth Rate by Country
+
+World Population Percentage: The population percentage by each Country
+
+My analysis objectives is to do the Population Analysis of Continents which including a line chart and table. The line chart illustrates the number of people on each continent over time.
+```{r,include=FALSE}
+library(tidyverse)
+library(labelled)
+library(gtsummary)
+library(dplyr)
+```
+
+## 2. Data set
+```{r}
+here::i_am("final.Rmd")
+```
+
+## 3.Table
+```{r,table, echo=FALSE}
+table1<-read_rds(here::here("output/table1.rds"))
+table1
+```
+
+## 4.Table description
+This table illustrates the population of different continents in 2022, 2015, 2010, 2000, 1990, 1980 and 1970. And it also shows the density of population and it's growth rate in every continents.
+
+## 5.Figure
+```{r, echo=FALSE}
+#| fig.align = "center",
+#| out.width = "100px"
+knitr::include_graphics(
+  here::here("output/plot1.png")
+)
+```
+
+## 6.Figure description
+From this line chart, we can see that there are the largest and fastest growing population in Asia, and the Pacific Ocean has unsignificant upward trend, and the least population.
+
