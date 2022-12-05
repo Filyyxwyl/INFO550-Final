@@ -18,3 +18,8 @@ output/plot1.png: code/plot.R world_population.csv
 # not only remove .rds file. if the sentencs before '&&' doesn't work, it won't go on
 clean:
 	rm -f output/*.rds && rm -f output/*.png  && rm -f *.html
+	
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
