@@ -34,7 +34,7 @@ COPY world_population.csv .
 RUN mkdir final_report
 
 # Create report and copy it to the final_report directory in containor
-CMD make && mv report.html final_report
+CMD make && mv report_final.html final_report
 
 
 
