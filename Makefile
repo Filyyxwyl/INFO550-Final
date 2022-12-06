@@ -23,3 +23,16 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
+	
+# Building the project image
+project_image:
+	docker build -t zhanxu/final_report .
+
+# Pull the project image from Dockerhub 
+pull_image:
+	docker pull zhanxu/final_report
+
+# Build the report automatically in our container
+.PHONY: final_report
+final_report:
+	docker run -v "/$$(pwd)/final_report":/project/final_report zhanxu/final_report
